@@ -1,0 +1,11 @@
+
+#about-us h3
+{
+	border-bottom: solid 1px #e0e0e0;
+	padding: 10px;
+}
+
+#about-us p:first-letter
+{
+	font-size: 120%;
+}
