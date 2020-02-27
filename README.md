@@ -1,10 +1,10 @@
 <h1 style="font-weight: bold">Location Bog Project in Laravel</h1>
 
 <p>
-    The application is kind of blog. 
-    Application works on 2 basic models:
-        - Users 
-        - Locations
+    The application is kind of blog. <br>
+    Application works on 2 basic models:<br>
+        - Users <br>
+        - Locations <br>
     Users can create account and add/update/delete any interesting places (posts).
     <br> 
     User can add title, address and images and comment to locations.
