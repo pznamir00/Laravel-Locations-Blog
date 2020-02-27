@@ -59,7 +59,7 @@ class LocationController extends Controller
             return view($template, compact('location', 'categories'));
         }
         
-        return redirect('');
+        return redirect('/');
     }
 
 
@@ -79,7 +79,7 @@ class LocationController extends Controller
         $loc->category = $request->input('category') + 1;
         $loc->save();
 
-        return redirect('')->with('success', 'Location updated');
+        return redirect('/')->with('success', 'Location updated');
     }
 
 

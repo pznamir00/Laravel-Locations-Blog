@@ -26,10 +26,15 @@ class PageController extends Controller
 
     public function one_location($id)
     {
-        $template = 'location.one_location';
-        $location = Location::find($id);
-        $cat = Category::find($location->category)->title;
-        return view($template, compact('location', 'cat'));
+        if(is_numeric($id))
+        {
+            $template = 'pages.one_location';
+            $location = Location::find($id);
+            $cat = $location->get_category_as_string();
+            return view($template, compact('location', 'cat'));
+        }
+        
+        return redirect('/');
     }
 
 
