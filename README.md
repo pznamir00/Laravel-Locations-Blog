@@ -9,7 +9,7 @@
     </ul>
     Users can create account and add/update/delete any interesting places (posts).
     <br> 
-    User can add title, address and images and comment to locations.
+    User can add title, address, images and comment to locations.
     <br>
 </p>
 
