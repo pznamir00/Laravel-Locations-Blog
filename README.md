@@ -1,4 +1,4 @@
-<h1 style="font-weight: bold">Location Bog Project in Laravel</h1>
+<h1 style="font-weight: bold">Location Blog Project in Laravel</h1>
 
 <p>
     The application is kind of blog. <br>
