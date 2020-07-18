@@ -1,0 +1,9 @@
+.list-group-item-dark{
+  background: #3f3f43 !important;
+  border-color: #5f5f65 !important;
+  color: #ddd !important;
+}
+
+.list-group-item-dark:hover{
+  opacity: 0.8;
+}

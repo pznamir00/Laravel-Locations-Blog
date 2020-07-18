@@ -1,0 +1,20 @@
+#post h1{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#post h6{
+  display: inline-block;
+}
+
+#post .category{
+  float: right;
+}
+
+#post #comments h3{
+  font-weight: 100;
+  color: #6ed962;
+}
+
+.card-body{
+  background-color: #2e2e32 !important;
+}

@@ -15,49 +15,50 @@
 //pages
 Route::get('/', 'PageController@index');
 
+Auth::routes();
+
 Route::get('/contact', [
 	'as' => 'contact',
-	'uses' => 'PageController@contact',
+	'uses' => 'ContactController@contact',
 ]);
 
-Route::post('/contact', 'PageController@contact_submit');
+Route::post('/contact', 'ContactController@submit_message');
+
+Route::middleware('auth')->group(function(){
+	Route::get('/account', [
+		'as' => 'account',
+		'uses' => 'PageController@account',
+	]);
+
+	Route::get('/posts/add', [
+		'as' => 'add',
+		'uses' => 'PostController@add',
+	]);
+
+	Route::post('/posts/add', 'PostController@commit');
+
+	Route::get('/posts/edit/{id}', [
+		'as' => 'edit',
+		'uses' => 'PostController@edit',
+	]);
+
+	Route::put('/posts/edit/{id}', 'PostController@update');
+
+	Route::delete('/posts/delete', 'PostController@delete');
+});
 
 Route::get('/about-us', [
 	'as' => 'about-us',
 	'uses' => 'PageController@about_us',
 ]);
 
-Route::get('/account', [
-	'as' => 'account',
-	'uses' => 'PageController@account',
-]);
+Route::get('/posts/{id}', 'PageController@one_post');
 
+Route::get('/posts/category/{slug}', 'CategoryController@index');
 
+Route::post('/locations/all', 'DataHandleController@get_all_posts');
 
-//auth
-Auth::routes();
-
-
-
-//locations
-Route::get('/locations/add', [
-	'as' => 'add',
-	'uses' => 'LocationController@add',
-]);
-
-Route::post('/locations/add', 'LocationController@add_action');
-
-Route::get('/locations/edit/{id}', 'LocationController@edit');
-
-Route::post('/locations/edit/{id}', 'LocationController@edit_action');
-
-Route::post('/locations/delete/{id}', 'LocationController@delete');
-
-Route::get('/locations/{id}', 'PageController@one_location');
-
-Route::get('/category/{slug}', 'FilterController@category');
-
-Route::get('/keywords', 'FilterController@keywords');
+Route::post('/filter_locations', 'DataHandleController@get_filtered_posts');
 
 
 

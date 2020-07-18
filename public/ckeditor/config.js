@@ -13,4 +13,5 @@ CKEDITOR.editorConfig = function( config ) {
     config.filebrowserUploadUrl = '/ckeditor/kcfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
     config.filebrowserImageUploadUrl = '/ckeditor/kcfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
     config.filebrowserFlashUploadUrl = '/ckeditor/kcfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash';
+    config.skin = 'moono-dark';
 };

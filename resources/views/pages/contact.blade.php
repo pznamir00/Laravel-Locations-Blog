@@ -5,7 +5,7 @@
 
 <br><br>
 
-{!! Form::open(['action'=>'PageController@contact_submit', 'method'=>'POST']) !!}
+{!! Form::open(['action'=>'ContactController@submit_message', 'method'=>'POST']) !!}
 	@csrf
 	{{Form::label('Your email:')}}
 	{{Form::text('email', '', ['class'=>'form-control'])}}

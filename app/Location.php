@@ -2,19 +2,15 @@
 
 namespace App;
 
-use Laravelista\Comments\Commentable;
 use Illuminate\Database\Eloquent\Model;
-use App\Category;
 
 class Location extends Model
 {
-	use Commentable;
+    protected $fillable = [
+      'street', 'address_number', 'city', 'zipcode'
+    ];
 
-
-	//categories are saving for location as 'id' of them
-	public function get_category_as_string()
-	{
-		return Category::find($this->category)->title;
-	}  
-	
+    public function post(){
+      return $this->hasOne('App\Post');
+    }
 }
