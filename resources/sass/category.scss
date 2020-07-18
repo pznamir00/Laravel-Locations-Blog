@@ -1,0 +1,12 @@
+@import 'variables';
+
+
+.list-group-item-dark{
+  background: $bg-light-1 !important;
+  border-color: $bg-light-2 !important;
+  color: #ddd !important;
+
+  &:hover{
+    opacity: $hover-opacity;
+  }
+}

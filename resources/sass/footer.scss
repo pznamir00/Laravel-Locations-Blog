@@ -1,0 +1,45 @@
+@import 'variables';
+
+
+footer{
+	width: 100%;
+	color: #dadada;
+	background: $bg-dark;
+
+  .list-group{
+  	padding: 8px;
+  }
+
+  hr{
+  	border-color: $bg-light-1;
+  }
+
+  h4{
+  	margin-left: 20px;
+  }
+
+  .fa{
+  	margin-right: 5px;
+  }
+
+  a{
+  	display: block;
+  	margin-left: 15px;
+  	margin-top: 10px;
+  	color: $special-color;
+  	font-weight: bold;
+
+    &:hover{
+    	opacity: $hover-opacity;
+    	color: $special-color-dark;
+    	text-decoration: none;
+    }
+  }
+}
+
+.c-py-rights{
+	border-top: solid 1px #292929;
+	text-align: center;
+	background: #222;
+	padding: 2px;
+}

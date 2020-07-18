@@ -1,0 +1,32 @@
+@import 'variables';
+
+
+body, html
+{
+	background-color: $bg-dark !important;
+	padding: 0;
+	margin: 0;
+}
+
+main{
+	min-height: 700px;
+	width: 92%;
+	margin: 140px auto;
+	padding: 20px;
+	color: $main-font-color;
+
+  hr{
+  	border-color: $hr-color;
+  }
+}
+
+.form-control{
+	background-color: $bg !important;
+	color: #999 !important;
+	border-color: $bg-light-2 !important;
+}
+
+.btn-primary{
+	background: $special-color-dark !important;
+	border-color: $special-color-dark !important;
+}

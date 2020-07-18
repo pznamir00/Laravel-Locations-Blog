@@ -1,0 +1,15 @@
+@import 'variables';
+
+
+#about-us{
+	h3{
+    padding: 10px;
+  }
+
+  p{
+    &:first-letter
+    {
+    	font-size: 120%;
+    }
+  }
+}

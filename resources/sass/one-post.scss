@@ -1,0 +1,27 @@
+@import 'variables';
+
+
+#post{
+  h1{
+    font-family: $font-family-sans-serif;
+  }
+
+  h6{
+    display: inline-block;
+  }
+
+  .category{
+    float: right;
+  }
+}
+
+#comments{
+  h3{
+    font-weight: 100;
+    color: $special-color;
+  }
+}
+
+.card-body{
+  background-color: $bg !important;
+}
