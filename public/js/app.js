@@ -91604,7 +91604,7 @@ var SearchForm = function SearchForm() {
   var prevVal = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (prevVal.current !== val) {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/filter_locations', {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/locations/filter', {
         keyword: val
       }).then(function (res) {
         setPosts(res.data);

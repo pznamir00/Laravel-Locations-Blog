@@ -10,10 +10,6 @@ use Auth;
 
 class PostController extends Controller
 {
-  public function __construct()
-  {
-      $this->middleware('auth');
-  }
 
   public function add()
   {
@@ -21,6 +17,7 @@ class PostController extends Controller
       $categories = Category::all()->pluck('title');
       return view($template, compact('categories'));
   }
+
 
   public function commit(Request $request)
   {
@@ -42,22 +39,18 @@ class PostController extends Controller
     $location = Location::create($request->all());
     $location->post_id = $post->id;
     $location->save();
-
     return redirect('/')->with('success', 'Post added');
   }
+
 
   public function edit($id)
   {
       $template = 'posts.edit';
       $post = Post::find($id);
-      if(Auth::user()->name == $post->author)
-      {
-          $categories = Category::all()->pluck('title');
-          return view($template, compact('post', 'categories'));
-      }
-
-      return redirect('/');
+      $categories = Category::all()->pluck('title');
+      return view($template, compact('post', 'categories'));
   }
+
 
   public function update(Request $request, $id)
   {
@@ -71,31 +64,20 @@ class PostController extends Controller
         'zipcode'         => 'required|max:5',
       ]);
 
+      $request['category_id'] = $request['category_id'] + 1;
       $post = Post::find($id);
-      $post->title = $request->input('title');
-      $post->description = $request->input('description');
-      $post->category_id = $request->input('category_id') + 1;
-      $post->save();
-
-      $location = $post->location;
-      $location->street = $request->input('street');
-      $location->address_number = $request->input('address_number');
-      $location->city = $request->input('city');
-      $location->zipcode = $request->input('zipcode');
-      $location->save();
-
+      $post->update($request->all());
+      $post->location->update($request->all());
       return redirect('/')->with('success', 'Post updated');
   }
+
 
   public function delete(Request $request)
   {
     try{
-      $post = Post::find($request->input('post_id'));
-      $post->location->delete();
-      $post->delete();
+      Post::find($request->input('post_id'))->delete();
       return redirect('/')->with('success', 'Post deleted');
-    }
-    catch(ErrorException $e){
+    } catch(\ErrorException $e){
       return redirect('/');
     }
   }

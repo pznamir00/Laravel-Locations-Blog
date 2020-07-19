@@ -12,7 +12,7 @@ const SearchForm = () => {
 
   useEffect(() => {
     if(prevVal.current !== val){
-      axios.post('/filter_locations', {
+      axios.post('/locations/filter', {
         keyword: val,
       })
       .then(res => {

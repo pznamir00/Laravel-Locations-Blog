@@ -25,26 +25,24 @@ Route::get('/contact', [
 Route::post('/contact', 'ContactController@submit_message');
 
 Route::middleware('auth')->group(function(){
-	Route::get('/account', [
-		'as' => 'account',
-		'uses' => 'PageController@account',
-	]);
+		Route::get('/account', [
+			'as' => 'account',
+			'uses' => 'PageController@account',
+		]);
+		Route::get('/posts/add', [
+			'as' => 'add',
+			'uses' => 'PostController@add',
+		]);
+		Route::post('/posts/add', 'PostController@commit');
+		Route::delete('/posts/delete', 'PostController@delete');
 
-	Route::get('/posts/add', [
-		'as' => 'add',
-		'uses' => 'PostController@add',
-	]);
-
-	Route::post('/posts/add', 'PostController@commit');
-
-	Route::get('/posts/edit/{id}', [
-		'as' => 'edit',
-		'uses' => 'PostController@edit',
-	]);
-
-	Route::put('/posts/edit/{id}', 'PostController@update');
-
-	Route::delete('/posts/delete', 'PostController@delete');
+		Route::middleware('own.resource')->group(function(){
+				Route::get('/posts/edit/{id}', [
+					'as' => 'edit',
+					'uses' => 'PostController@edit',
+				]);
+				Route::put('/posts/edit/{id}', 'PostController@update');
+		});
 });
 
 Route::get('/about-us', [
@@ -56,9 +54,9 @@ Route::get('/posts/{id}', 'PageController@one_post');
 
 Route::get('/posts/category/{slug}', 'CategoryController@index');
 
-Route::post('/locations/all', 'DataHandleController@get_all_posts');
 
-Route::post('/filter_locations', 'DataHandleController@get_filtered_posts');
+Route::post('locations/all', 'DataHandleController@all');
+Route::post('locations/filter', 'DataHandleController@filter');
 
 
 

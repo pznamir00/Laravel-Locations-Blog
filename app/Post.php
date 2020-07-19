@@ -21,4 +21,11 @@ class Post extends Model
     public function category(){
       return $this->belongsTo('App\Category');
     }
+
+    public static function boot() {
+      parent::boot();
+      static::deleting(function($post) {
+           $post->location->delete();
+      });
+    }
 }

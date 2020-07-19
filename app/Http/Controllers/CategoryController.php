@@ -10,13 +10,12 @@ class CategoryController extends Controller
 {
     public function index($slug)
     {
-        $category = Category::where('slug', '=', $slug)->first();
-        if($category){
-          $posts = Post::where('category_id', '=', $category->id)->with(['location', 'category'])->get();
-          return view('pages.category', compact('posts'));
-        }
-        else {
-          return redirect('/');
-        }
+      try{
+        $category = Category::where('slug', $slug)->first();
+        $posts = Post::where('category_id', $category->id)->with(['location', 'category'])->get();
+        return view('pages.category', compact('posts'));
+      } catch(\ErrorException $e){
+        return redirect('/');
+      }
     }
 }
