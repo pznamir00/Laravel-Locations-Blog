@@ -6544,6 +6544,25 @@ exports.push([module.i, ".map{\r\n  height: 100vh;\r\n  width: 100%;\r\n}\r\n", 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Post/Images/style.css":
+/*!***************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/Post/Images/style.css ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#main-image{\r\n  max-width: 350px;\r\n  max-height: 350px;\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/SearchForm/style.css":
 /*!**************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/SearchForm/style.css ***!
@@ -91005,7 +91024,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! leaflet/dist/leaflet.css */ "./node_modules/leaflet/dist/leaflet.css");
 /* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Home_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Home/index */ "./resources/js/components/Home/index.js");
-/* harmony import */ var _components_AddPost_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AddPost/index */ "./resources/js/components/AddPost/index.js");
+/* harmony import */ var _components_Post_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Post/index */ "./resources/js/components/Post/index.js");
 /* harmony import */ var _components_SearchForm_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/SearchForm/index */ "./resources/js/components/SearchForm/index.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -91024,10 +91043,10 @@ var App = function App() {
     component: _components_Home_index__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/posts/add",
-    component: _components_AddPost_index__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _components_Post_index__WEBPACK_IMPORTED_MODULE_5__["AddPost"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/posts/edit/:id",
-    component: _components_AddPost_index__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _components_Post_index__WEBPACK_IMPORTED_MODULE_5__["EditPost"]
   }))));
 };
 
@@ -91081,221 +91100,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
-
-/***/ }),
-
-/***/ "./resources/js/components/AddPost/Form.js":
-/*!*************************************************!*\
-  !*** ./resources/js/components/AddPost/Form.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var Form = function Form(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Street"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    onBlur: props.update,
-    name: "street",
-    className: "form-control"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Address number"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    onBlur: props.update,
-    name: "address_number",
-    className: "form-control"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "City"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    onBlur: props.update,
-    name: "city",
-    className: "form-control"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Zip code"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    onBlur: props.update,
-    name: "zipcode",
-    className: "form-control"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "submit",
-    onClick: props.checkValid,
-    value: "Save",
-    className: "btn btn-primary"
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Form);
-
-/***/ }),
-
-/***/ "./resources/js/components/AddPost/ValidMessage.js":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/AddPost/ValidMessage.js ***!
-  \*********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var ValidMessage = function ValidMessage(props) {
-  var message = props.valid ? 'Your address is valid' : 'Your address is not valid';
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, message);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (ValidMessage);
-
-/***/ }),
-
-/***/ "./resources/js/components/AddPost/index.js":
-/*!**************************************************!*\
-  !*** ./resources/js/components/AddPost/index.js ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return AddPost; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/components/AddPost/Form.js");
-/* harmony import */ var _ValidMessage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ValidMessage */ "./resources/js/components/AddPost/ValidMessage.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-var AddPost =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(AddPost, _Component);
-
-  function AddPost(props) {
-    var _this;
-
-    _classCallCheck(this, AddPost);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(AddPost).call(this, props));
-    _this.state = {
-      street: '',
-      address_number: '',
-      city: '',
-      zipcode: '',
-      valid: false
-    }; //set address instance for edit component
-
-    if (typeof address !== 'undefined') {
-      _this.state.street = address.street;
-      _this.state.address_number = address.number;
-      _this.state.city = address.city;
-      _this.state.zipcode = address.zipcode;
-      _this.state.valid = true;
-    }
-
-    return _this;
-  }
-
-  _createClass(AddPost, [{
-    key: "inputHandle",
-    value: function inputHandle(e) {
-      switch (e.target.name) {
-        case 'street':
-          this.setState({
-            street: e.target.value
-          });
-          break;
-
-        case 'address_number':
-          this.setState({
-            address_number: e.target.value
-          });
-          break;
-
-        case 'city':
-          this.setState({
-            city: e.target.value
-          });
-          break;
-
-        case 'zipcode':
-          this.setState({
-            zipcode: e.target.value
-          });
-          break;
-      }
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      Object.entries(this.state).map(function (value) {
-        if (value[0] !== 'valid') {
-          document.querySelector('input[name="' + value[0] + '"]').value = value[1];
-        }
-      });
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {
-      var _this2 = this;
-
-      if (prevState.street !== this.state.street || prevState.address_number !== this.state.address_number || prevState.city !== this.state.city || prevState.zipcode !== this.state.zipcode) {
-        var API = "https://nominatim.openstreetmap.org/search?format=json&q=".concat(this.state.street + ' ' + this.state.number + ', ' + this.state.city + ' ' + this.state.zipcode);
-        fetch(API).then(function (response) {
-          return response.json();
-        }).then(function (res) {
-          _this2.setState({
-            valid: res.length > 0
-          });
-        })["catch"](function (err) {
-          return console.log(err);
-        });
-      }
-    }
-  }, {
-    key: "checkValid",
-    value: function checkValid(e) {
-      if (!this.state.valid) e.preventDefault();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        state: this.state,
-        update: this.inputHandle.bind(this),
-        checkValid: this.checkValid.bind(this)
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ValidMessage__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        valid: this.state.valid
-      }));
-    }
-  }]);
-
-  return AddPost;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-
 
 /***/ }),
 
@@ -91505,6 +91309,360 @@ var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/a
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/Post/Images/index.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Post/Images/index.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ "./resources/js/components/Post/Images/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var Images = function Images(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.loadImg ? props.loadImg : ""),
+      _useState2 = _slicedToArray(_useState, 2),
+      image = _useState2[0],
+      setImage = _useState2[1];
+
+  var updateImage = function updateImage(e) {
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function () {
+      return setImage(reader.result);
+    };
+
+    reader.onerror = function (error) {
+      return console.log(error);
+    };
+
+    if (props.loadImg) {
+      $('input[name="imgWasChanged"]').val("true");
+    }
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "file",
+    accept: "image/*",
+    name: "main_image",
+    onChange: updateImage
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: image,
+    className: "mt-5 mb-5",
+    id: "main-image",
+    alt: "Main image"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Images);
+
+/***/ }),
+
+/***/ "./resources/js/components/Post/Images/style.css":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/Post/Images/style.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./style.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Post/Images/style.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/Post/Location/Form.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/Post/Location/Form.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Form = function Form(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Street"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    onBlur: props.update,
+    name: "street",
+    className: "form-control"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Address number"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    onBlur: props.update,
+    name: "address_number",
+    className: "form-control"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "City"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    onBlur: props.update,
+    name: "city",
+    className: "form-control"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Zip code"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    onBlur: props.update,
+    name: "zipcode",
+    className: "form-control"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "submit",
+    onClick: props.checkValid,
+    value: "Save",
+    className: "btn btn-primary"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Form);
+
+/***/ }),
+
+/***/ "./resources/js/components/Post/Location/ValidMessage.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Post/Location/ValidMessage.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var ValidMessage = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (_ref) {
+  var valid = _ref.valid;
+  var message = valid ? 'Your address is valid' : 'Your address is not valid';
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, message);
+});
+/* harmony default export */ __webpack_exports__["default"] = (ValidMessage);
+
+/***/ }),
+
+/***/ "./resources/js/components/Post/Location/index.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Post/Location/index.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LocationHandle; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/components/Post/Location/Form.js");
+/* harmony import */ var _ValidMessage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ValidMessage */ "./resources/js/components/Post/Location/ValidMessage.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var LocationHandle =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(LocationHandle, _Component);
+
+  function LocationHandle(props) {
+    var _this;
+
+    _classCallCheck(this, LocationHandle);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LocationHandle).call(this, props));
+    _this.state = props.loadData ? {
+      street: props.loadData.street,
+      address_number: props.loadData.address_number,
+      city: props.loadData.city,
+      zipcode: props.loadData.zipcode,
+      valid: true
+    } : {
+      street: '',
+      address_number: '',
+      city: '',
+      zipcode: '',
+      valid: false
+    };
+    return _this;
+  }
+
+  _createClass(LocationHandle, [{
+    key: "inputHandle",
+    value: function inputHandle(e) {
+      switch (e.target.name) {
+        case 'street':
+          this.setState({
+            street: e.target.value
+          });
+          break;
+
+        case 'address_number':
+          this.setState({
+            address_number: e.target.value
+          });
+          break;
+
+        case 'city':
+          this.setState({
+            city: e.target.value
+          });
+          break;
+
+        case 'zipcode':
+          this.setState({
+            zipcode: e.target.value
+          });
+          break;
+      }
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      Object.entries(this.state).map(function (value) {
+        if (value[0] !== 'valid') {
+          document.querySelector('input[name="' + value[0] + '"]').value = value[1];
+        }
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      var _this2 = this;
+
+      if (prevState.street !== this.state.street || prevState.address_number !== this.state.address_number || prevState.city !== this.state.city || prevState.zipcode !== this.state.zipcode) {
+        var API = "https://nominatim.openstreetmap.org/search?format=json&q=".concat(this.state.street + ' ' + this.state.address_number + ', ' + this.state.city + ' ' + this.state.zipcode);
+        fetch(API).then(function (response) {
+          return response.json();
+        }).then(function (res) {
+          return _this2.setState({
+            valid: res.length > 0
+          });
+        })["catch"](function (err) {
+          return console.log(err);
+        });
+      }
+    }
+  }, {
+    key: "checkValid",
+    value: function checkValid(e) {
+      if (!this.state.valid) e.preventDefault();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        state: this.state,
+        update: this.inputHandle.bind(this),
+        checkValid: this.checkValid.bind(this)
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ValidMessage__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        valid: this.state.valid
+      }));
+    }
+  }]);
+
+  return LocationHandle;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Post/index.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Post/index.js ***!
+  \***********************************************/
+/*! exports provided: AddPost, EditPost */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddPost", function() { return AddPost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditPost", function() { return EditPost; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Location_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Location/index */ "./resources/js/components/Post/Location/index.js");
+/* harmony import */ var _Images_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Images/index */ "./resources/js/components/Post/Images/index.js");
+
+
+
+
+var AddPost = function AddPost() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Images_index__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Location_index__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+};
+
+var EditPost = function EditPost(id) {
+  var loadLocationData = {
+    street: $('input[name="street_instance"]').val(),
+    address_number: $('input[name="address_number_instance"]').val(),
+    city: $('input[name="city_instance"]').val(),
+    zipcode: $('input[name="zipcode_instance"]').val()
+  };
+
+  var loadImg = function loadImg() {
+    return $('input[name="imageUrlInstance"]').val();
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Images_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    loadImg: loadImg
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Location_index__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    loadData: loadLocationData
+  }));
+};
+
+
 
 /***/ }),
 

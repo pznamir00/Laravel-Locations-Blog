@@ -3,25 +3,23 @@ import Form from './Form';
 import ValidMessage from './ValidMessage';
 
 
-export default class AddPost extends Component {
+export default class LocationHandle extends Component {
 
   constructor(props){
     super(props);
-    this.state = {
+    this.state = props.loadData ? {
+      street: props.loadData.street,
+      address_number: props.loadData.address_number,
+      city: props.loadData.city,
+      zipcode: props.loadData.zipcode,
+      valid: true,
+    } : {
       street: '',
       address_number: '',
       city: '',
       zipcode: '',
       valid: false,
     };
-    //set address instance for edit component
-    if(typeof(address) !== 'undefined'){
-        this.state.street = address.street;
-        this.state.address_number = address.number;
-        this.state.city = address.city;
-        this.state.zipcode = address.zipcode;
-        this.state.valid = true;
-    }
   }
 
   inputHandle(e){
@@ -43,16 +41,12 @@ export default class AddPost extends Component {
 
   componentDidUpdate(prevProps, prevState){
     if(prevState.street !== this.state.street || prevState.address_number !== this.state.address_number || prevState.city !== this.state.city || prevState.zipcode !== this.state.zipcode){
-      const API = `https://nominatim.openstreetmap.org/search?format=json&q=${this.state.street+' '+this.state.number+', '+this.state.city+' '+this.state.zipcode}`;
+      const API = `https://nominatim.openstreetmap.org/search?format=json&q=${this.state.street+' '+this.state.address_number+', '+this.state.city+' '+this.state.zipcode}`;
       fetch(API)
       .then(response => response.json())
-      .then(res => {
-        this.setState({
-          valid: (res.length > 0),
-        });
-      })
+      .then(res => this.setState({ valid: (res.length > 0) }))
       .catch(err => console.log(err));
-    }
+      }
   }
 
   checkValid(e){

@@ -11533,7 +11533,7 @@ main {
   width: 92%;
   margin: 140px auto;
   padding: 20px;
-  color: #777;
+  color: #aaa;
 }
 
 main hr {
@@ -11561,6 +11561,14 @@ main hr {
 
 #post .category {
   float: right;
+}
+
+.post-main-image {
+  position: static;
+  max-width: 300px;
+  max-height: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #comments h3 {

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-	{!! Form::open(['action' => 'PostController@commit', 'method' => 'POST']) !!}
+	{!! Form::open(['action' => 'PostController@commit', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 		<div class="form-group">
 			@csrf
 			{{Form::label('Title')}}

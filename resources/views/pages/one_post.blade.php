@@ -9,6 +9,7 @@
 	<h6 class="category">Category >> <a href="/posts/category/{{$post->category->slug}}">{{$post->category->title}}</a></h6>
 	<p class="mt-5 pt-5">
 		{!!$post->description!!}
+		<img src="/media/{{$post->image->name}}" src="Post image" class="post-main-image" />
 	</p>
 
 	<!-- AUTHORS OPTIONS -->

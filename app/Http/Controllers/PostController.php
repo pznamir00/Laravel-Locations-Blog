@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Location;
 use App\Category;
+use App\Image;
 use Auth;
 
 class PostController extends Controller
@@ -29,6 +31,7 @@ class PostController extends Controller
       'address_number'  => 'required|max:16',
       'city'            => 'required|max:32',
       'zipcode'         => 'required|max:5',
+      'main_image'      => 'required'
     ]);
 
     $post = Post::create($request->all());
@@ -39,6 +42,15 @@ class PostController extends Controller
     $location = Location::create($request->all());
     $location->post_id = $post->id;
     $location->save();
+
+    $image = new Image();
+    $file = $request->file('main_image');
+    $image->name = microtime(true).'.'.$file->getClientOriginalExtension();
+    $image->post_id = $post->id;
+    $image->path = '/media/';
+    $image->save();
+    $file->move(public_path('media'), $image->name);
+
     return redirect('/')->with('success', 'Post added');
   }
 
@@ -68,6 +80,15 @@ class PostController extends Controller
       $post = Post::find($id);
       $post->update($request->all());
       $post->location->update($request->all());
+
+      if($request->input('imgWasChanged') == 'true'){
+        $file = $request->file('main_image');
+        File::delete('media/'.$post->image->name);
+        $post->image->name = microtime(true).'.'.$file->getClientOriginalExtension();
+        $file->move(public_path('media'), $post->image->name);
+        $post->image->save();
+      }
+
       return redirect('/')->with('success', 'Post updated');
   }
 
