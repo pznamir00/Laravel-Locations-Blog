@@ -62,3 +62,7 @@ Route::post('locations/filter', 'DataHandleController@filter');
 
 //404
 Route::fallback('ErrorController@error404');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
