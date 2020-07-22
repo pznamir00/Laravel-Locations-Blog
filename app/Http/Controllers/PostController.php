@@ -46,7 +46,6 @@ class PostController extends Controller
     $file = $request->file('main_image');
     $image->name = microtime(true).'.'.$file->getClientOriginalExtension();
     $image->post_id = $post->id;
-    $image->path = '/media/';
     $image->save();
     $file->move(public_path('media'), $image->name);
 
