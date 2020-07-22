@@ -12,7 +12,7 @@ class Post extends Model
     use Commentable;
 
     protected $fillable = [
-      'title', 'description'
+      'title', 'description', 'category_id'
     ];
 
     public function location(){

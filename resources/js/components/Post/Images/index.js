@@ -17,7 +17,9 @@ const Images = (props) => {
   return (
     <React.Fragment>
       <input type="file" accept="image/*" name="main_image" onChange={updateImage}/>
-      <img src={image} className="mt-5 mb-5" id="main-image" alt="Main image"/>
+      {image &&
+        <img src={image} className="mt-5 mb-5" id="main-image" alt="Main image"/>
+      }
     </React.Fragment>
   );
 }

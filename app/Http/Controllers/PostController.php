@@ -16,7 +16,7 @@ class PostController extends Controller
   public function add()
   {
       $template = 'posts.add';
-      $categories = Category::all()->pluck('title');
+      $categories = Category::all()->pluck('title', 'id')->toArray();
       return view($template, compact('categories'));
   }
 
@@ -35,7 +35,6 @@ class PostController extends Controller
     ]);
 
     $post = Post::create($request->all());
-    $post->category_id = $request->input('category_id') + 1;
     $post->author = Auth::user()->name;
     $post->save();
 
@@ -59,7 +58,7 @@ class PostController extends Controller
   {
       $template = 'posts.edit';
       $post = Post::find($id);
-      $categories = Category::all()->pluck('title');
+      $categories = Category::all()->pluck('title', 'id')->toArray();
       return view($template, compact('post', 'categories'));
   }
 
@@ -76,7 +75,6 @@ class PostController extends Controller
         'zipcode'         => 'required|max:5',
       ]);
 
-      $request['category_id'] = $request['category_id'] + 1;
       $post = Post::find($id);
       $post->update($request->all());
       $post->location->update($request->all());

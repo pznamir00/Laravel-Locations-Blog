@@ -5,7 +5,7 @@
 <div id="post">
 	<h1>{{$post->title}}</h1>
 	<hr>
-	<h6>{{ $post->location->street.' '.$post->location->address_number.', '.$post->location->city.' '.$post->location->zipcode }}</h6>
+	<h6 id="full-address">{{ $post->location->street.' '.$post->location->address_number.', '.$post->location->city.' '.$post->location->zipcode }}</h6>
 	<h6 class="category">Category >> <a href="/posts/category/{{$post->category->slug}}">{{$post->category->title}}</a></h6>
 	<p class="mt-5 pt-5">
 		{!!$post->description!!}

@@ -91365,7 +91365,7 @@ var Images = function Images(props) {
     accept: "image/*",
     name: "main_image",
     onChange: updateImage
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }), image && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: image,
     className: "mt-5 mb-5",
     id: "main-image",
@@ -91633,17 +91633,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditPost", function() { return EditPost; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Location_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Location/index */ "./resources/js/components/Post/Location/index.js");
-/* harmony import */ var _Images_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Images/index */ "./resources/js/components/Post/Images/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Location_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Location/index */ "./resources/js/components/Post/Location/index.js");
+/* harmony import */ var _Images_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Images/index */ "./resources/js/components/Post/Images/index.js");
+
 
 
 
 
 var AddPost = function AddPost() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Images_index__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Location_index__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Images_index__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Location_index__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 };
 
-var EditPost = function EditPost(id) {
+var EditPost = function EditPost() {
   var loadLocationData = {
     street: $('input[name="street_instance"]').val(),
     address_number: $('input[name="address_number_instance"]').val(),
@@ -91655,9 +91658,9 @@ var EditPost = function EditPost(id) {
     return $('input[name="imageUrlInstance"]').val();
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Images_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Images_index__WEBPACK_IMPORTED_MODULE_3__["default"], {
     loadImg: loadImg
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Location_index__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Location_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
     loadData: loadLocationData
   }));
 };

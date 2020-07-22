@@ -1,6 +1,9 @@
 import React from 'react';
+import axios from 'axios';
 import LocationHandle from './Location/index';
 import Images from './Images/index';
+
+
 
 
 const AddPost = () => {
@@ -13,7 +16,7 @@ const AddPost = () => {
 }
 
 
-const EditPost = (id) => {
+const EditPost = () => {
   const loadLocationData = {
       street:           $('input[name="street_instance"]').val(),
       address_number:   $('input[name="address_number_instance"]').val(),
@@ -32,7 +35,6 @@ const EditPost = (id) => {
     </React.Fragment>
   );
 }
-
 
 export {
   AddPost,
