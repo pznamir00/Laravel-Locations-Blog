@@ -11442,65 +11442,47 @@ footer a:hover {
 
 header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   left: 0;
   font-size: 20px;
   font-weight: bold;
   z-index: 100000;
   background-color: #2e2e32;
-  padding-top: 10px;
 }
 
-header .container {
-  padding: 0;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+header .nav-link {
+  font-size: 20px;
+  color: #d0d0d0;
+  margin-left: 10px;
 }
 
-header .row {
-  width: 100vw !important;
+header .nav-link:hover {
+  opacity: 0.8;
+}
+
+header .auth-link {
+  color: #6ed962;
+}
+
+header .fa {
+  margin-right: 10px;
 }
 
 #logo {
   font-size: 30px;
   font-family: "Josefin Sans", sans-serif;
   color: #d0d0d0;
+  margin-left: 50px;
 }
 
 #logo:hover {
   text-decoration: none;
 }
 
-#pages {
-  text-align: center;
-  margin-top: 10px;
-  display: inline-block;
-}
-
-#pages a {
+.navbar-toggler {
+  font-size: 30px;
   color: #d0d0d0;
-  font-size: 14px;
-  font-weight: 100;
-  padding: 0px 15px;
-  display: inline-block;
-}
-
-#pages a:hover {
-  text-decoration: none;
-  opacity: 0.8;
-}
-
-#pages .dropdown {
-  width: 100px;
-}
-
-#pages .dropdown-menu {
-  background: #1d1d21;
-}
-
-#pages .dropdown-item {
-  padding: 5px;
 }
 
 #search-panel {
@@ -11508,17 +11490,8 @@ header .row {
   float: left;
   text-align: center;
   display: block;
-  padding: 7px;
+  padding: 2px;
   border-top: 1px solid #3f3f43;
-}
-
-#search-panel input {
-  height: 24px;
-  background: transparent;
-  color: #bbb;
-  border: none;
-  border-radius: 0;
-  border-bottom: solid 1.5px #6ed962 !important;
 }
 
 body,

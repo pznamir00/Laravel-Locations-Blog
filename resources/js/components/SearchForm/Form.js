@@ -8,7 +8,7 @@ const Form = props => {
   return (
     <React.Fragment>
       <div className="dropdown">
-        <input type='text' id='search-input' className='form-control' placeholder="Search" onChange={props.changeHandle} onFocus={showList} onBlur={hideList}/>
+        <input type='text' id='search-input' className='form-control' placeholder="Search location" onChange={props.changeHandle} onFocus={showList} onBlur={hideList}/>
         <div id="search-dropdown" className="dropdown-content">
           {props.posts.map((post, key) =>
             <a href={'/posts/'+post.id} className="list-group-item-dark" key={key}>

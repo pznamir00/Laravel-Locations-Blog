@@ -4,24 +4,30 @@
 header
 {
 	position: fixed;
-	width: 100%;
+	width: 100vw;
 	top: 0;
 	left: 0;
 	font-size: 20px;
 	font-weight: bold;
 	z-index: 100000;
 	background-color: $bg;
-	padding-top: 10px;
 
-  .container{
-  	padding: 0;
-  	margin-left: 0 !important;
-  	margin-right: 0 !important;
-  }
+	.nav-link{
+		font-size: 20px;
+		color: #d0d0d0;
+		margin-left: 10px;
+		&:hover{
+			opacity: $hover-opacity;
+		}
+	}
 
-  .row{
-  	width: 100vw !important;
-  }
+	.auth-link{
+		color: $special-color;
+	}
+
+	.fa{
+		margin-right: 10px;
+	}
 }
 
 #logo
@@ -29,41 +35,15 @@ header
 	font-size: 30px;
 	font-family: $font-family-sans-serif;
 	color: #d0d0d0;
-
+	margin-left: 50px;
   &:hover{
     text-decoration: none;
   }
 }
 
-#pages{
-  text-align: center;
-  margin-top: 10px;
-  display: inline-block;
-
-  a{
-    color: #d0d0d0;
-    font-size: 14px;
-    font-weight: 100;
-    padding: 0px 15px;
-    display: inline-block;
-
-    &:hover{
-      text-decoration: none;
-      opacity: $hover-opacity;
-    }
-  }
-
-  .dropdown{
-    width: 100px;
-  }
-
-  .dropdown-menu{
-    background: $bg-dark;
-  }
-
-  .dropdown-item{
-    padding: 5px;
-  }
+.navbar-toggler{
+	font-size: 30px;
+	color: #d0d0d0;
 }
 
 #search-panel{
@@ -71,15 +51,6 @@ header
 	float: left;
 	text-align: center;
 	display: block;
-	padding: 7px;
+	padding: 2px;
 	border-top: 1px solid $bg-light-1;
-
-  input{
-  	height: 24px;
-  	background: transparent;
-  	color: #bbb;
-  	border: none;
-  	border-radius: 0;
-  	border-bottom: solid 1.5px $special-color !important;
-  }
 }
