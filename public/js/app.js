@@ -6537,7 +6537,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".map{\r\n  position: absolute;\r\n  height: 100vh;\r\n  width: calc(100vw - 17px);\r\n  top: 30px;\r\n  left: 0;\r\n  padding: 0 !important;\r\n  margin: 0 !important;\r\n  box-sizing: border-box;\r\n}\r\n", ""]);
+exports.push([module.i, ".map{\r\n  position: absolute;\r\n  height: 80vh;\r\n  width: calc(100vw - 17px);\r\n  top: 85px;\r\n  left: 0;\r\n  padding: 0 !important;\r\n  margin: 0 !important;\r\n  box-sizing: border-box;\r\n}\r\n", ""]);
 
 // exports
 
@@ -91209,7 +91209,7 @@ function (_React$Component) {
     _this2 = _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this));
     _this2.state = {
       position: [52, 15],
-      zoom: 8,
+      zoom: 5,
       locations: []
     };
 

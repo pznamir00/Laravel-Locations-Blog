@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar-expand-lg navbar-dark">
-    <nav class="navbar navbar-brand">
+    <nav class="navbar navbar-brand ml-1 ml-lg-5 mr-0 pr-0">
       <a href="/" id="logo">Wonderfull<span style="color: #6ed962;">P</span>lace</a>
     </nav>
     <button class="navbar-toggler ml-auto float-right mr-5 mt-1" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,14 +15,14 @@
             <a class="nav-link auth-link d-lg-inline-block" href="{{ route('login') }}"><i class="fa fa-user"></i>{{ __('Login') }}</a>
             <a class="nav-link auth-link d-lg-inline-block" href="{{ route('register') }}"><i class="fa fa-sign-in"></i>{{ __('Register') }}</a>
         @else
-            <div class="dropdown d-inline-block">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle auth-link" href="account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <div class="dropdown d-inline-block" style="max-width: 200px;">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle auth-link mr-0" href="account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
               </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="{{ route('account') }}">{{ __('Your profile') }}</a>
-                <a class="dropdown-item" href="{{ route('add') }}">{{ __('Add location') }}</a>
-                <a class="dropdown-item" href="{{ route('logout') }}"
+              <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item bg-dark text-light" href="{{ route('account') }}">{{ __('Your profile') }}</a>
+                <a class="dropdown-item bg-dark text-light" href="{{ route('add') }}">{{ __('Add location') }}</a>
+                <a class="dropdown-item bg-dark text-light" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Sign out') }}

@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mail;
 
 class ContactController extends Controller
 {
   public function contact()
   {
-    $template = 'pages.contact';
+    $template = 'contact.index';
     return view($template);
   }
 
@@ -23,9 +24,9 @@ class ContactController extends Controller
     try
     {
       $mess = $request->input('message');
-      Mail::send(['text'=>'home'], ['name'=>''], function($mess){
-        $mess->to('example@gmail.com', 'To ')->subject($request->input('subject'));
-        $mess->from($request->input('email'), 'From ');
+      Mail::send(['text'=>'home'], ['name'=>'hyj'], function($mess){
+        $mess->to('pznamir00@gmail.com', 'To ')->subject("subject");
+        $mess->from('pznamir00@gmail.com', 'From ');
       });
       return redirect('/')->with('success', 'Successful send message');
     }

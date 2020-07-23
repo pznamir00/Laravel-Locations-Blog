@@ -14,7 +14,7 @@ export default class Home extends React.Component {
      super();
      this.state = {
        position: [52, 15],
-       zoom: 8,
+       zoom: 5,
        locations: [],
      };
 
