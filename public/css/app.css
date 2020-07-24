@@ -11525,9 +11525,9 @@ main hr {
 }
 
 .alert {
-  position: absolute;
+  position: fixed;
   right: 40px;
-  top: 90px;
+  top: 100px;
   z-index: 99999;
 }
 
