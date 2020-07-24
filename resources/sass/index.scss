@@ -31,3 +31,10 @@ main{
 	background: $special-color-dark !important;
 	border-color: $special-color-dark !important;
 }
+
+.alert{
+	position: absolute;
+	right: 40px;
+	top: 100px;
+	z-index: 99999;
+}

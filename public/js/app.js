@@ -91117,28 +91117,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/es/index.js");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _markerConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./markerConfig */ "./resources/js/components/Home/markerConfig.js");
 
 
 
 
 
-var markerIcon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAApCAYAAADAk4LOAAAFgUlEQVR4Aa1XA5BjWRTN2oW17d3YaZtr2962HUzbDNpjszW24mRt28p47v7zq/bXZtrp/lWnXr337j3nPCe85NcypgSFdugCpW5YoDAMRaIMqRi6aKq5E3YqDQO3qAwjVWrD8Ncq/RBpykd8oZUb/kaJutow8r1aP9II0WmLKLIsJyv1w/kqw9Ch2MYdB++12Onxee/QMwvf4/Dk/Lfp/i4nxTXtOoQ4pW5Aj7wpici1A9erdAN2OH64x8OSP9j3Ft3b7aWkTg/Fm91siTra0f9on5sQr9INejH6CUUUpavjFNq1B+Oadhxmnfa8RfEmN8VNAsQhPqF55xHkMzz3jSmChWU6f7/XZKNH+9+hBLOHYozuKQPxyMPUKkrX/K0uWnfFaJGS1QPRtZsOPtr3NsW0uyh6NNCOkU3Yz+bXbT3I8G3xE5EXLXtCXbbqwCO9zPQYPRTZ5vIDXD7U+w7rFDEoUUf7ibHIR4y6bLVPXrz8JVZEql13trxwue/uDivd3fkWRbS6/IA2bID4uk0UpF1N8qLlbBlXs4Ee7HLTfV1j54APvODnSfOWBqtKVvjgLKzF5YdEk5ewRkGlK0i33Eofffc7HT56jD7/6U+qH3Cx7SBLNntH5YIPvODnyfIXZYRVDPqgHtLs5ABHD3YzLuespb7t79FY34DjMwrVrcTuwlT55YMPvOBnRrJ4VXTdNnYug5ucHLBjEpt30701A3Ts+HEa73u6dT3FNWwflY86eMHPk+Yu+i6pzUpRrW7SNDg5JHR4KapmM5Wv2E8Tfcb1HoqqHMHU+uWDD7zg54mz5/2BSnizi9T1Dg4QQXLToGNCkb6tb1NU+QAlGr1++eADrzhn/u8Q2YZhQVlZ5+CAOtqfbhmaUCS1ezNFVm2imDbPmPng5wmz+gwh+oHDce0eUtQ6OGDIyR0uUhUsoO3vfDmmgOezH0mZN59x7MBi++WDL1g/eEiU3avlidO671bkLfwbw5XV2P8Pzo0ydy4t2/0eu33xYSOMOD8hTf4CrBtGMSoXfPLchX+J0ruSePw3LZeK0juPJbYzrhkH0io7B3k164hiGvawhOKMLkrQLyVpZg8rHFW7E2uHOL888IBPlNZ1FPzstSJM694fWr6RwpvcJK60+0HCILTBzZLFNdtAzJaohze60T8qBzyh5ZuOg5e7uwQppofEmf2++DYvmySqGBuKaicF1blQjhuHdvCIMvp8whTTfZzI7RldpwtSzL+F1+wkdZ2TBOW2gIF88PBTzD/gpeREAMEbxnJcaJHNHrpzji0gQCS6hdkEeYt9DF/2qPcEC8RM28Hwmr3sdNyht00byAut2k3gufWNtgtOEOFGUwcXWNDbdNbpgBGxEvKkOQsxivJx33iow0Vw5S6SVTrpVq11ysA2Rp7gTfPfktc6zhtXBBC+adRLshf6sG2RfHPZ5EAc4sVZ83yCN00Fk/4kggu40ZTvIEm5g24qtU4KjBrx/BTTH8ifVASAG7gKrnWxJDcU7x8X6Ecczhm3o6YicvsLXWfh3Ch1W0k8x0nXF+0fFxgt4phz8QvypiwCCFKMqXCnqXExjq10beH+UUA7+nG6mdG/Pu0f3LgFcGrl2s0kNNjpmoJ9o4B29CMO8dMT4Q5ox8uitF6fqsrJOr8qnwNbRzv6hSnG5wP+64C7h9lp30hKNtKdWjtdkbuPA19nJ7Tz3zR/ibgARbhb4AlhavcBebmTHcFl2fvYEnW0ox9xMxKBS8btJ+KiEbq9zA4RthQXDhPa0T9TEe69gWupwc6uBUphquXgf+/FrIjweHQS4/pduMe5ERUMHUd9xv8ZR98CxkS4F2n3EUrUZ10EYNw7BWm9x1GiPssi3GgiGRDKWRYZfXlON+dfNbM+GgIwYdwAAAAASUVORK5CYII=';
-var customIcon = leaflet__WEBPACK_IMPORTED_MODULE_4___default.a.icon({
-  iconUrl: markerIcon,
-  iconSize: [25, 41],
-  iconAnchor: [12.5, 41],
-  popupAnchor: [0, -41]
-});
-
-var Picker = function Picker(_ref) {
+var Picker = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (_ref) {
   var locations = _ref.locations;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, locations.map(function (loc, key) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_3__["Marker"], {
       position: [loc.lat, loc.lon],
       postId: loc.id,
-      icon: customIcon,
+      icon: _markerConfig__WEBPACK_IMPORTED_MODULE_4__["default"],
       key: key
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_3__["Tooltip"], {
       direction: "top",
@@ -91148,8 +91139,7 @@ var Picker = function Picker(_ref) {
       href: '/posts/' + loc.id
     }, "Show post")));
   }));
-};
-
+});
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Picker));
 
 /***/ }),
@@ -91282,6 +91272,29 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Home/markerConfig.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Home/markerConfig.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_0__);
+
+var markerPic = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAApCAYAAADAk4LOAAAFgUlEQVR4Aa1XA5BjWRTN2oW17d3YaZtr2962HUzbDNpjszW24mRt28p47v7zq/bXZtrp/lWnXr337j3nPCe85NcypgSFdugCpW5YoDAMRaIMqRi6aKq5E3YqDQO3qAwjVWrD8Ncq/RBpykd8oZUb/kaJutow8r1aP9II0WmLKLIsJyv1w/kqw9Ch2MYdB++12Onxee/QMwvf4/Dk/Lfp/i4nxTXtOoQ4pW5Aj7wpici1A9erdAN2OH64x8OSP9j3Ft3b7aWkTg/Fm91siTra0f9on5sQr9INejH6CUUUpavjFNq1B+Oadhxmnfa8RfEmN8VNAsQhPqF55xHkMzz3jSmChWU6f7/XZKNH+9+hBLOHYozuKQPxyMPUKkrX/K0uWnfFaJGS1QPRtZsOPtr3NsW0uyh6NNCOkU3Yz+bXbT3I8G3xE5EXLXtCXbbqwCO9zPQYPRTZ5vIDXD7U+w7rFDEoUUf7ibHIR4y6bLVPXrz8JVZEql13trxwue/uDivd3fkWRbS6/IA2bID4uk0UpF1N8qLlbBlXs4Ee7HLTfV1j54APvODnSfOWBqtKVvjgLKzF5YdEk5ewRkGlK0i33Eofffc7HT56jD7/6U+qH3Cx7SBLNntH5YIPvODnyfIXZYRVDPqgHtLs5ABHD3YzLuespb7t79FY34DjMwrVrcTuwlT55YMPvOBnRrJ4VXTdNnYug5ucHLBjEpt30701A3Ts+HEa73u6dT3FNWwflY86eMHPk+Yu+i6pzUpRrW7SNDg5JHR4KapmM5Wv2E8Tfcb1HoqqHMHU+uWDD7zg54mz5/2BSnizi9T1Dg4QQXLToGNCkb6tb1NU+QAlGr1++eADrzhn/u8Q2YZhQVlZ5+CAOtqfbhmaUCS1ezNFVm2imDbPmPng5wmz+gwh+oHDce0eUtQ6OGDIyR0uUhUsoO3vfDmmgOezH0mZN59x7MBi++WDL1g/eEiU3avlidO671bkLfwbw5XV2P8Pzo0ydy4t2/0eu33xYSOMOD8hTf4CrBtGMSoXfPLchX+J0ruSePw3LZeK0juPJbYzrhkH0io7B3k164hiGvawhOKMLkrQLyVpZg8rHFW7E2uHOL888IBPlNZ1FPzstSJM694fWr6RwpvcJK60+0HCILTBzZLFNdtAzJaohze60T8qBzyh5ZuOg5e7uwQppofEmf2++DYvmySqGBuKaicF1blQjhuHdvCIMvp8whTTfZzI7RldpwtSzL+F1+wkdZ2TBOW2gIF88PBTzD/gpeREAMEbxnJcaJHNHrpzji0gQCS6hdkEeYt9DF/2qPcEC8RM28Hwmr3sdNyht00byAut2k3gufWNtgtOEOFGUwcXWNDbdNbpgBGxEvKkOQsxivJx33iow0Vw5S6SVTrpVq11ysA2Rp7gTfPfktc6zhtXBBC+adRLshf6sG2RfHPZ5EAc4sVZ83yCN00Fk/4kggu40ZTvIEm5g24qtU4KjBrx/BTTH8ifVASAG7gKrnWxJDcU7x8X6Ecczhm3o6YicvsLXWfh3Ch1W0k8x0nXF+0fFxgt4phz8QvypiwCCFKMqXCnqXExjq10beH+UUA7+nG6mdG/Pu0f3LgFcGrl2s0kNNjpmoJ9o4B29CMO8dMT4Q5ox8uitF6fqsrJOr8qnwNbRzv6hSnG5wP+64C7h9lp30hKNtKdWjtdkbuPA19nJ7Tz3zR/ibgARbhb4AlhavcBebmTHcFl2fvYEnW0ox9xMxKBS8btJ+KiEbq9zA4RthQXDhPa0T9TEe69gWupwc6uBUphquXgf+/FrIjweHQS4/pduMe5ERUMHUd9xv8ZR98CxkS4F2n3EUrUZ10EYNw7BWm9x1GiPssi3GgiGRDKWRYZfXlON+dfNbM+GgIwYdwAAAAASUVORK5CYII=';
+var markerIcon = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.icon({
+  iconUrl: markerPic,
+  iconSize: [25, 41],
+  iconAnchor: [12.5, 41],
+  popupAnchor: [0, -41]
+});
+/* harmony default export */ __webpack_exports__["default"] = (markerIcon);
+
+/***/ }),
+
 /***/ "./resources/js/components/Home/style.css":
 /*!************************************************!*\
   !*** ./resources/js/components/Home/style.css ***!
@@ -91337,7 +91350,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Images = function Images(props) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.loadImg ? props.loadImg : ""),
+  var $imgWasChanged = $('input[name="imgWasChanged"]');
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.imgUrl ? props.imgUrl : ""),
       _useState2 = _slicedToArray(_useState, 2),
       image = _useState2[0],
       setImage = _useState2[1];
@@ -91355,8 +91370,8 @@ var Images = function Images(props) {
       return console.log(error);
     };
 
-    if (props.loadImg) {
-      $('input[name="imgWasChanged"]').val("true");
+    if (props.imgUrl) {
+      $imgWasChanged.current.val("true");
     }
   };
 
@@ -91500,9 +91515,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -91523,11 +91538,11 @@ function (_Component) {
     _classCallCheck(this, LocationHandle);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(LocationHandle).call(this, props));
-    _this.state = props.loadData ? {
-      street: props.loadData.street,
-      address_number: props.loadData.address_number,
-      city: props.loadData.city,
-      zipcode: props.loadData.zipcode,
+    _this.state = props.locationsData ? {
+      street: props.locationsData.street,
+      address_number: props.locationsData.address_number,
+      city: props.locationsData.city,
+      zipcode: props.locationsData.zipcode,
       valid: true
     } : {
       street: '',
@@ -91536,6 +91551,8 @@ function (_Component) {
       zipcode: '',
       valid: false
     };
+    _this.inputHandle = _this.inputHandle.bind(_assertThisInitialized(_this));
+    _this.checkValid = _this.checkValid.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -91605,8 +91622,8 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
         state: this.state,
-        update: this.inputHandle.bind(this),
-        checkValid: this.checkValid.bind(this)
+        update: this.inputHandle,
+        checkValid: this.checkValid
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ValidMessage__WEBPACK_IMPORTED_MODULE_2__["default"], {
         valid: this.state.valid
       }));
@@ -91647,21 +91664,17 @@ var AddPost = function AddPost() {
 };
 
 var EditPost = function EditPost() {
-  var loadLocationData = {
+  var imgUrl = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])($('input[name="imageUrlInstance"]').val());
+  var locationsData = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])({
     street: $('input[name="street_instance"]').val(),
     address_number: $('input[name="address_number_instance"]').val(),
     city: $('input[name="city_instance"]').val(),
     zipcode: $('input[name="zipcode_instance"]').val()
-  };
-
-  var loadImg = function loadImg() {
-    return $('input[name="imageUrlInstance"]').val();
-  };
-
+  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Images_index__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    loadImg: loadImg
+    imgUrl: imgUrl.current
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Location_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    loadData: loadLocationData
+    locationsData: locationsData.current
   }));
 };
 
@@ -91686,16 +91699,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Form = function Form(props) {
-  var showList = function showList() {
-    return $('#search-dropdown').toggle();
-  };
-
-  var hideList = function hideList() {
-    return setTimeout(function () {
-      return $('#search-dropdown').hide();
+  var $searchDropdown = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])($('#search-dropdown'));
+  var showList = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    $searchDropdown.current.toggle();
+  }, []);
+  var hideList = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    setTimeout(function () {
+      return $searchDropdown.current.hide();
     }, 100);
-  };
-
+  }, []);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "dropdown"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -91762,19 +91774,15 @@ var SearchForm = function SearchForm() {
       posts = _useState4[0],
       setPosts = _useState4[1];
 
-  var prevVal = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (prevVal.current !== val) {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/locations/filter', {
-        keyword: val
-      }).then(function (res) {
-        setPosts(res.data);
-        prevVal.current = val;
-      })["catch"](function (error) {
-        return console.log(error);
-      });
-    }
-  });
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/locations/filter', {
+      keyword: val
+    }).then(function (res) {
+      setPosts(res.data);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  }, [val]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
     posts: posts,
     changeHandle: function changeHandle(e) {

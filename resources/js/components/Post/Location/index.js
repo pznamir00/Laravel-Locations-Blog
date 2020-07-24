@@ -7,11 +7,11 @@ export default class LocationHandle extends Component {
 
   constructor(props){
     super(props);
-    this.state = props.loadData ? {
-      street: props.loadData.street,
-      address_number: props.loadData.address_number,
-      city: props.loadData.city,
-      zipcode: props.loadData.zipcode,
+    this.state = props.locationsData ? {
+      street: props.locationsData.street,
+      address_number: props.locationsData.address_number,
+      city: props.locationsData.city,
+      zipcode: props.locationsData.zipcode,
       valid: true,
     } : {
       street: '',
@@ -20,6 +20,9 @@ export default class LocationHandle extends Component {
       zipcode: '',
       valid: false,
     };
+
+    this.inputHandle = this.inputHandle.bind(this);
+    this.checkValid = this.checkValid.bind(this);
   }
 
   inputHandle(e){
@@ -59,8 +62,8 @@ export default class LocationHandle extends Component {
       <Fragment>
         <Form
           state={this.state}
-          update={this.inputHandle.bind(this)}
-          checkValid={this.checkValid.bind(this)}
+          update={this.inputHandle}
+          checkValid={this.checkValid}
         />
         <ValidMessage
           valid={this.state.valid}

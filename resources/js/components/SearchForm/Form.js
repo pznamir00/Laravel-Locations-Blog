@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import './style.css';
 
 
 const Form = props => {
-  const showList = () => $('#search-dropdown').toggle();
-  const hideList = () => setTimeout(() => $('#search-dropdown').hide(), 100);
+  const $searchDropdown = useRef($('#search-dropdown'));
+
+  const showList = useMemo(() => {
+    $searchDropdown.current.toggle();
+  }, []);
+
+  const hideList = useMemo(() => {
+    setTimeout(() => $searchDropdown.current.hide(), 100);
+  }, []);
+
   return (
     <React.Fragment>
       <div className="dropdown">

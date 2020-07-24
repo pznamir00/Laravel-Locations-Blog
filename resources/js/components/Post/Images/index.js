@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './style.css';
 
 const Images = (props) => {
-  const [image, setImage] = useState(props.loadImg ? props.loadImg : "");
+  const $imgWasChanged = $('input[name="imgWasChanged"]');
+  const [image, setImage] = useState(props.imgUrl ? props.imgUrl : "");
   const updateImage = (e) => {
     var file = e.target.files[0];
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => setImage(reader.result);
     reader.onerror = (error) => console.log(error);
-    if(props.loadImg){
-      $('input[name="imgWasChanged"]').val("true");
+    if(props.imgUrl){
+      $imgWasChanged.current.val("true");
     }
   };
 

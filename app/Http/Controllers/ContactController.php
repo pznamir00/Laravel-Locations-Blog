@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Config;
 use Mail;
 
 class ContactController extends Controller
@@ -23,16 +24,22 @@ class ContactController extends Controller
 
     try
     {
-      $mess = $request->input('message');
-      Mail::send(['text'=>'home'], ['name'=>'hyj'], function($mess){
-        $mess->to('pznamir00@gmail.com', 'To ')->subject("subject");
-        $mess->from('pznamir00@gmail.com', 'From ');
+      $data = array(
+        'email' => $request->email,
+        'subject' => $request->subject,
+        '_message' => $request->message,
+        'app_name' => config('app.name'),
+        'app_mail' => config('mail.username'),
+      );
+
+      Mail::send('contact.message', $data, function($message) use ($data){
+        $message->from($data['app_mail'], $data['email']);
+        $message->to($data['app_mail'], 'To '.$data['app_name'])->subject($data['subject']);
       });
-      return redirect('/')->with('success', 'Successful send message');
+      return redirect('/')->with('success', 'Successful sent message');
     }
-    catch(Exception $e)
-    {
-      return redirect('/')->with('error', 'Error send message');
+    catch(Exception $e){
+      return redirect('/')->with('error', 'Failed to submit your message');
     }
   }
 }

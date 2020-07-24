@@ -11524,6 +11524,13 @@ main hr {
   border-color: #5dc851 !important;
 }
 
+.alert {
+  position: absolute;
+  right: 40px;
+  top: 90px;
+  z-index: 99999;
+}
+
 #post h1 {
   font-family: "Josefin Sans", sans-serif;
 }
