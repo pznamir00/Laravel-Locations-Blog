@@ -1,25 +1,32 @@
 <h1 style="font-weight: bold">Location Blog Project in Laravel</h1>
+<b>Link: <a href="http://floating-castle-27345.herokuapp.com/">http://floating-castle-27345.herokuapp.com/</a></b>
+
+<hr>
+
+<h3>Technology</h3>
+<h4>Frontend</h4>
+<ul>
+<li>ReactJS</li>
+<li>React-Router</li>
+<li>React-Leaflet</li>
+<li>React-Hooks</li>
+<li>CKEditor</li>
+<li>CKFinder</li>
+<li>Axios</li>
+<li>SASS</li>
+</ul>
+
+<h4>Backend</h4>
+<ul>
+<li>PHP7</li>
+<li>MySql</li>
+<li>Laravel</li>
+<li>Native Comments</li>
+</ul>
+
+<hr>
 
 <p>
-    The application is kind of blog. <br>
-    Application works on 2 basic models:<br>
-    <ul>
-        <li>Users</li>
-        <li>Locations</li>
-    </ul>
-    Users can create account and add/update/delete any interesting places (posts).
-    <br> 
-    User can add title, address, images and comment to locations.
-    <br>
+Application use locations as a posts.
+User can add a special place and see some posts.
 </p>
-
-<br><br>
-
-<span>
-    Project is created with 3 packages:
-    <ul>
-        <li><a href="https://github.com/laravelista/comments">Native Comments for Laravel</a></li>
-        <li><a href="https://github.com/ckeditor/">CKEditor</a></li>
-        <li><a href="https://github.com/ckfinder">CKFinder</a></li>
-    </ul>
-</span>
