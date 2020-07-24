@@ -1,12 +1,13 @@
 import React, { memo } from 'react';
 import { Redirect } from 'react-router-dom';
-import {withRouter} from 'react-router';
+import { withRouter } from 'react-router';
 import { Marker, Popup, Tooltip } from 'react-leaflet';
-import markerIcon from './markerConfig';
+import { markerIcon } from './markerConfig';
 
 
 
-const Picker = memo(({ locations }) => {
+
+const Picker = ({ locations }) => {
   return (
     <React.Fragment>
       {locations.map((loc, key) =>
@@ -25,6 +26,6 @@ const Picker = memo(({ locations }) => {
       )}
     </React.Fragment>
   );
-});
+}
 
 export default withRouter(Picker);

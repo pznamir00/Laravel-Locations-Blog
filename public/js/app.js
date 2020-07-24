@@ -91123,13 +91123,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Picker = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (_ref) {
+
+var Picker = function Picker(_ref) {
   var locations = _ref.locations;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, locations.map(function (loc, key) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_3__["Marker"], {
       position: [loc.lat, loc.lon],
       postId: loc.id,
-      icon: _markerConfig__WEBPACK_IMPORTED_MODULE_4__["default"],
+      icon: _markerConfig__WEBPACK_IMPORTED_MODULE_4__["markerIcon"],
       key: key
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_3__["Tooltip"], {
       direction: "top",
@@ -91139,7 +91140,8 @@ var Picker = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (_ref) 
       href: '/posts/' + loc.id
     }, "Show post")));
   }));
-});
+};
+
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Picker));
 
 /***/ }),
@@ -91276,11 +91278,12 @@ function (_React$Component) {
 /*!******************************************************!*\
   !*** ./resources/js/components/Home/markerConfig.js ***!
   \******************************************************/
-/*! exports provided: default */
+/*! exports provided: markerIcon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "markerIcon", function() { return markerIcon; });
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -91291,7 +91294,6 @@ var markerIcon = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.icon({
   iconAnchor: [12.5, 41],
   popupAnchor: [0, -41]
 });
-/* harmony default export */ __webpack_exports__["default"] = (markerIcon);
 
 /***/ }),
 
@@ -91699,13 +91701,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Form = function Form(props) {
-  var $searchDropdown = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])($('#search-dropdown'));
-  var showList = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
-    $searchDropdown.current.toggle();
+  var showList = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function () {
+    return $('#search-dropdown').toggle();
   }, []);
-  var hideList = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
-    setTimeout(function () {
-      return $searchDropdown.current.hide();
+  var hideList = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function () {
+    return setTimeout(function () {
+      return $('#search-dropdown').hide();
     }, 100);
   }, []);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
