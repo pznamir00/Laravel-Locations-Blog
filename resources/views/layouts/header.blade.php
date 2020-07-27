@@ -1,9 +1,9 @@
 <header>
   <nav class="navbar-expand-lg navbar-dark">
-    <nav class="navbar navbar-brand ml-1 ml-lg-5 mr-0 pr-0">
+    <nav class="navbar navbar-brand ml-lg-5 mr-0 pr-0">
       <a href="/" id="logo">Wonderfull<span style="color: #6ed962;">P</span>lace</a>
     </nav>
-    <button class="navbar-toggler ml-auto float-right mr-4 mt-1" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler float-right mr-4 mt-2 p-0 pt-1" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa fa-bars ml-2"></i>
     </button>
     <nav class="navbar-expand-lg navbar-dark d-lg-inline-block ml-5">

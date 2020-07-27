@@ -11524,7 +11524,7 @@ main hr {
   border-color: #5dc851 !important;
 }
 
-.alert {
+.alert-success {
   position: fixed;
   right: 40px;
   top: 100px;
