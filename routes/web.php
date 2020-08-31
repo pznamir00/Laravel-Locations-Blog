@@ -15,7 +15,10 @@
 //pages
 Route::get('/', 'PageController@index');
 
-Auth::routes();
+Route::get('/about', [
+	'as' => 'about-us',
+	'uses' => 'PageController@about_us',
+]);
 
 Route::get('/contact', [
 	'as' => 'contact',
@@ -24,45 +27,50 @@ Route::get('/contact', [
 
 Route::post('/contact', 'ContactController@submit_message');
 
+
+
+Auth::routes();
+
+
+
 Route::middleware('auth')->group(function(){
+		//posts management
+		Route::get('/management/posts', [
+			'as' => 'add',
+			'uses' => 'PostController@add',
+		]);
+
+		Route::post('/management/posts', 'PostController@commit');
+
+		Route::delete('/management/posts', 'PostController@delete');
+
+		Route::middleware('own.resource')->group(function(){
+				Route::get('/management/posts/{id}', [
+					'as' => 'edit',
+					'uses' => 'PostController@edit',
+				]);
+				Route::put('/management/posts/{id}', 'PostController@update');
+		});
+
+		//account
 		Route::get('/account', [
 			'as' => 'account',
 			'uses' => 'PageController@account',
 		]);
-		Route::get('/posts/add', [
-			'as' => 'add',
-			'uses' => 'PostController@add',
-		]);
-		Route::post('/posts/add', 'PostController@commit');
-		Route::delete('/posts/delete', 'PostController@delete');
-
-		Route::middleware('own.resource')->group(function(){
-				Route::get('/posts/edit/{id}', [
-					'as' => 'edit',
-					'uses' => 'PostController@edit',
-				]);
-				Route::put('/posts/edit/{id}', 'PostController@update');
-		});
 });
 
-Route::get('/about-us', [
-	'as' => 'about-us',
-	'uses' => 'PageController@about_us',
-]);
 
+//ajax
+Route::get('/posts/all', 'DataHandleController@all');
+Route::get('/posts/filters', 'DataHandleController@filter');
+
+
+//posts view
 Route::get('/posts/{id}', 'PageController@one_post');
 
-Route::get('/posts/category/{slug}', 'CategoryController@index');
-
-
-Route::post('locations/all', 'DataHandleController@all');
-Route::post('locations/filter', 'DataHandleController@filter');
+Route::get('/posts-list/categories/{slug}', 'CategoryController@index');
 
 
 
 //404
 Route::fallback('ErrorController@error404');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

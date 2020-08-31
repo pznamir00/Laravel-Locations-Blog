@@ -10,14 +10,14 @@ class DataHandleController extends Controller
 {
     public function all()
     {
-      $data = Post::with(['location', 'category'])->get();
-      return response()->json($data);
+        $data = Post::with(['location', 'category'])->get();
+        return response()->json($data, 200);
     }
 
-    public function filter(Request $request)
+    public function filter()
     {
-      $keyword = $request->input('keyword');
-      $data = Post::with(['location', 'category'])->where('title', 'like', '%'.$keyword.'%')->orWhere('description', 'like', '%'.$keyword.'%')->get();
-      return response()->json($data);
+        $keywords = request('keywords');
+        $data = Post::with(['location', 'category'])->where('title', 'like', '%'.$keywords.'%')->orWhere('description', 'like', '%'.$keywords.'%')->get();
+        return response()->json($data, 200);
     }
 }

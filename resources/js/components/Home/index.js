@@ -3,70 +3,76 @@ import { Map, TileLayer } from 'react-leaflet';
 import axios from 'axios';
 import './style.css';
 import Picker from './Picker';
+import actions from '../../redux/homeMap/actions';
+import { connect } from 'react-redux';
 
 
 
 
+class Home extends React.Component {
 
-export default class Home extends React.Component {
-
-   constructor(){
-     super();
-     this.state = {
-       position: [52, 15],
-       zoom: 5,
-       locations: [],
-     };
-
-     ((_this) => {
-       navigator.geolocation.getCurrentPosition(function(position) {
-          _this.setState({
-            position: [position.coords.latitude, position.coords.longitude],
-          });
+   constructor(props){
+     super(props);
+     ((_props) => {
+       navigator.geolocation.getCurrentPosition(pos => {
+          _props.initPosition([pos.coords.latitude, pos.coords.longitude])
        });
-     })(this);
+     })(props);
    }
 
    componentDidMount(){
      var _this = this;
-     axios.post('/locations/all').then(function(response){
+     axios.get('/posts/all').then(response => {
        response.data.forEach(i => {
-          let loc = i.location;
-          const API = `https://nominatim.openstreetmap.org/search?format=json&q=${loc.street+' '+loc.address_number+', '+loc.city+' '+loc.zipcode}`;
-          fetch(API)
+          const loc = i.location;
+          fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${loc.street+' '+loc.address_number+', '+loc.city+' '+loc.zipcode}`)
           .then(result => result.json())
           .then(res => {
             if(res.length > 0){
-              let locations = _this.state.locations;
-              locations.push({
+              let newLocation = {
                 id: i.id,
                 added: i.created_at,
                 address: loc.street+' '+loc.address_number+', '+loc.city+' '+loc.zipcode,
                 title: i.title,
                 lat: res[0].lat,
                 lon: res[0].lon
-              });
-              _this.setState({
-                locations: locations,
-              });
+              }
+              _this.props.addLocation(newLocation)
             }
           })
           .catch(error => console.log(error));
        });
-     }).catch(function(error){
-       console.log(error);
      })
+     .catch(error => console.log(error))
    }
 
    render() {
      return (
-       <Map className="map" center={this.state.position} zoom={this.state.zoom}>
+       <Map className="map" center={this.props.position} zoom={this.props.zoom}>
          <TileLayer
           attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
           url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
         />
-         <Picker locations={this.state.locations} />
+         <Picker locations={this.props.locations} />
        </Map>
      )
    }
 }
+
+
+
+const mapStateToProps = state => {
+  return {
+    zoom: state.homeMap.zoom,
+    position: state.homeMap.position,
+    locations: state.homeMap.locations
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  setZoom: zoom => dispatch(actions.setZoom(zoom)),
+  initPosition: position => dispatch(actions.initPosition(position)),
+  addLocation: location => dispatch(actions.addLocation(location))
+})
+
+export const HomeContainer = connect(mapStateToProps, mapDispatchToProps)(Home)

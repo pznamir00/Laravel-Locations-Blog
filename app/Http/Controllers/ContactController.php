@@ -11,7 +11,7 @@ class ContactController extends Controller
   public function contact()
   {
     $template = 'contact.index';
-    return view($template);
+    return response()->view($template)->setStatusCode(200);
   }
 
   public function submit_message(Request $request)
@@ -39,7 +39,7 @@ class ContactController extends Controller
       return redirect('/')->with('success', 'Successful sent message');
     }
     catch(Exception $e){
-      return redirect('/')->with('error', 'Failed to submit your message');
+      return redirect('/', 500)->with('error', 'Failed to submit your message');
     }
   }
 }

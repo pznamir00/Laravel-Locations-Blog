@@ -49,14 +49,14 @@ class PostController extends Controller
     $image->save();
     $file->move(public_path('media'), $image->name);
 
-    return redirect('/')->with('success', 'Post added');
+    return redirect('/')->with('success', 'Post added successfuly');
   }
 
 
   public function edit($id)
   {
       $template = 'posts.edit';
-      $post = Post::find($id);
+      $post = Post::findOrFail($id);
       $categories = Category::all()->pluck('title', 'id')->toArray();
       return view($template, compact('post', 'categories'));
   }
@@ -92,11 +92,8 @@ class PostController extends Controller
 
   public function delete(Request $request)
   {
-    try{
-      Post::find($request->input('post_id'))->delete();
+      $post = Post::findOrFail($request->input('post_id'));
+      $post->delete();
       return redirect('/')->with('success', 'Post deleted');
-    } catch(\ErrorException $e){
-      return redirect('/');
-    }
   }
 }

@@ -1,7 +1,7 @@
 .map{
   position: absolute;
   height: 80vh;
-  width: calc(100vw - 17px);
+  width: 100vw;
   top: 85px;
   left: 0;
   padding: 0 !important;

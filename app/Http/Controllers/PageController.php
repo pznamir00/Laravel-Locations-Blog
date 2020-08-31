@@ -20,16 +20,9 @@ class PageController extends Controller
 
     public function one_post($id)
     {
-      try{
-        $template = 'pages.one_post';
-        $post = Post::find($id);
-        if($post)
-          return view($template, compact('post'));
-        abort(404);
-      }
-      catch(QueryException $e){
-        return redirect('/');
-      }
+      $template = 'pages.one_post';
+      $post = Post::findOrFail($id);
+      return view($template, compact('post'));
     }
 
 

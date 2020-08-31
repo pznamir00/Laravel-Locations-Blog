@@ -8,7 +8,7 @@
     <h4>Categories</h4>
     <ul class="list-group">
       @foreach(App\Category::all() as $category)
-        <a href="/posts/category/{{$category->slug}}">{{$category->title}}</a>
+        <a href="/posts-list/categories/{{$category->slug}}">{{$category->title}}</a>
       @endforeach
     </ul>
     <div class='c-py-rights'>

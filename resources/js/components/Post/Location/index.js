@@ -1,59 +1,55 @@
 import React, { Component, Fragment } from 'react';
 import Form from './Form';
 import ValidMessage from './ValidMessage';
+import actions from '../../../redux/locationManagement/actions';
+import { connect } from 'react-redux';
 
 
-export default class LocationHandle extends Component {
+
+class LocationHandle extends Component {
 
   constructor(props){
     super(props);
-    this.state = props.locationsData ? {
-      street: props.locationsData.street,
-      address_number: props.locationsData.address_number,
-      city: props.locationsData.city,
-      zipcode: props.locationsData.zipcode,
-      valid: true,
-    } : {
-      street: '',
-      address_number: '',
-      city: '',
-      zipcode: '',
-      valid: false,
-    };
-
     this.inputHandle = this.inputHandle.bind(this);
     this.checkValid = this.checkValid.bind(this);
   }
 
   inputHandle(e){
-    switch(e.target.name){
-      case 'street': this.setState({ street: e.target.value });                 break;
-      case 'address_number': this.setState({ address_number: e.target.value }); break;
-      case 'city': this.setState({ city: e.target.value });                     break;
-      case 'zipcode': this.setState({ zipcode: e.target.value });               break;
-    }
+    const { name, value } = e.target;
+    this.props.setAddressField(name, value);
   }
 
   componentDidMount(){
-    Object.entries(this.state).map((value) => {
-      if(value[0] !== 'valid'){
-        document.querySelector('input[name="' + value[0] + '"]').value = value[1];
-      }
-    });
+    if(this.props.addressInstance !== undefined){
+      this.props.setAddressField('street', this.props.addressInstance.street)
+      this.props.setAddressField('address_number', this.props.addressInstance.address_number)
+      this.props.setAddressField('city', this.props.addressInstance.city)
+      this.props.setAddressField('zipcode', this.props.addressInstance.zipcode)
+      this.props._switch(true);
+    }
   }
 
-  componentDidUpdate(prevProps, prevState){
-    if(prevState.street !== this.state.street || prevState.address_number !== this.state.address_number || prevState.city !== this.state.city || prevState.zipcode !== this.state.zipcode){
-      const API = `https://nominatim.openstreetmap.org/search?format=json&q=${this.state.street+' '+this.state.address_number+', '+this.state.city+' '+this.state.zipcode}`;
-      fetch(API)
-      .then(response => response.json())
-      .then(res => this.setState({ valid: (res.length > 0) }))
-      .catch(err => console.log(err));
+  componentDidUpdate(prevProps){
+    if(prevProps.address.street !== this.props.address.street ||
+      prevProps.address.address_number !== this.props.address.address_number ||
+      prevProps.address.city !== this.props.address.city ||
+      prevProps.address.zipcode !== this.props.address.zipcode)
+      {
+        const API = `https://nominatim.openstreetmap.org/search?format=json&q=${
+          this.props.address.street + ' ' +
+          this.props.address.address_number + ', ' +
+          this.props.address.city + ' ' +
+          this.props.address.zipcode
+        }`;
+        fetch(API)
+        .then(response => response.json())
+        .then(res => this.props._switch(res.length > 0))
+        .catch(err => console.log(err));
       }
   }
 
   checkValid(e){
-    if(!this.state.valid)
+    if(!this.props.valid)
       e.preventDefault();
   }
 
@@ -61,14 +57,32 @@ export default class LocationHandle extends Component {
     return (
       <Fragment>
         <Form
-          state={this.state}
+          address={this.props.address}
           update={this.inputHandle}
           checkValid={this.checkValid}
         />
         <ValidMessage
-          valid={this.state.valid}
+          valid={this.props.valid}
         />
       </Fragment>
     );
   }
 }
+
+
+
+
+
+const mapStateToProps = state => {
+  return {
+    valid: state.locationManagement.valid,
+    address: state.locationManagement.address
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  _switch: value => dispatch(actions._switch(value)),
+  setAddressField: (field, value) => dispatch(actions.setAddressField(field, value))
+})
+
+export const LocationHandleContainer = connect(mapStateToProps, mapDispatchToProps)(LocationHandle)

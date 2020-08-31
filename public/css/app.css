@@ -11498,6 +11498,7 @@ html {
   background-color: #1d1d21 !important;
   padding: 0;
   margin: 0;
+  overflow: overlay;
 }
 
 main {

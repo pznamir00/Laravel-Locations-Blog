@@ -3,9 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import 'leaflet/dist/leaflet.css';
-import Home from './components/Home/index';
+import { HomeContainer } from './components/Home/index';
 import { AddPost, EditPost } from './components/Post/index';
-import SearchForm from './components/SearchForm/index';
+import { SearchFormContainer } from './components/SearchForm/index';
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
+
 
 
 const App = () => {
@@ -13,17 +16,29 @@ const App = () => {
       <React.Fragment>
         <Router>
             <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/posts/add' component={AddPost} />
-              <Route path='/posts/edit/:id' component={EditPost} />
+              <Route exact path='/' component={HomeContainer} />
+              <Route path='/management/posts/:id' component={EditPost} />
+              <Route exact path='/management/posts' component={AddPost} />
             </Switch>
         </Router>
       </React.Fragment>
     );
 }
 
+
+
 if (document.getElementById('root')) {
-    ReactDOM.render(<App />, document.getElementById('root'));
+    ReactDOM.render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+      document.getElementById('root')
+    )
 }
 
-ReactDOM.render(<SearchForm/>, document.getElementById('search-panel'))
+ReactDOM.render(
+  <Provider store={store}>
+    <SearchFormContainer />
+  </Provider>,
+  document.getElementById('search-panel')
+)

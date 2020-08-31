@@ -16,7 +16,7 @@
 	@if(Auth::check())
 		@if(Auth::user()->name == $post->author)
 			<div class="text-right">
-				<a class="btn btn-light" href="/posts/edit/{{$post->id}}">Edit</a>
+				<a class="btn btn-light" href="/management/posts/{{$post->id}}">Edit</a>
 				<br><br>
 				{!! Form::open(['action'=>['PostController@delete', $post->id], 'method'=>'DELETE']) !!}
 					@csrf

@@ -30,8 +30,10 @@
         "react-geolocated": "^3.0.1",
         "react-leaflet": "^2.7.0",
         "react-multiple-image-input": "^1.0.0",
+        "react-redux": "^7.2.1",
         "react-router": "^5.2.0",
         "react-router-dom": "^5.2.0",
-        "react-simple-image-slider": "^1.0.2"
+        "react-simple-image-slider": "^1.0.2",
+        "redux": "^4.0.5"
     }
 }
