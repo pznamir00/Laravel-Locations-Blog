@@ -14,6 +14,7 @@
 <li>CKFinder</li>
 <li>Axios</li>
 <li>SASS</li>
+<li>Redux</li>
 </ul>
 
 <h4>Backend</h4>
@@ -22,6 +23,7 @@
 <li>MySql</li>
 <li>Laravel</li>
 <li>Native Comments</li>
+<li>REST API</li>
 </ul>
 
 <hr>
